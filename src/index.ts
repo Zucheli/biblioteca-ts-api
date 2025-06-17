@@ -1,14 +1,11 @@
-import express from "express";
+import express from 'express';
+import livroRoutes from './routes/livroRoutes';
 
 const app = express();
 app.use(express.json());
 
-const PORT = 3000;
+app.use(livroRoutes);
 
-app.get("/", (req, res) => {
-  res.send("API Biblioteca rodando!");
-});
-
-app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
+app.listen(3000, () => {
+  console.log('Servidor rodando em http://localhost:3000');
 });
